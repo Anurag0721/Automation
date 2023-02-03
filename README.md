@@ -1,2 +1,2 @@
 # Test__Automation
-Developed selenium test automation framework with helpof TestNG
+Developed selenium test automation framework with help of TestNG
