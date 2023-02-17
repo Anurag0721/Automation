@@ -4,14 +4,15 @@ package tests.test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
-import tests.basetest.BaseTest;
+import tests.basetest.BaseUiTest;
+import utils.ConfigUtils;
+
 import static reporter.TestReporter.addTestStepPassed;
 
-public class Demo extends BaseTest {
+public class Demo extends BaseUiTest {
 
     static HomePage homePage;
     static LoginPage loginPage;
@@ -20,7 +21,7 @@ public class Demo extends BaseTest {
     public static void beforeClass(){
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
-        driver.get("https://www.amazon.in/");
+        driver.get(ConfigUtils.getEnvironmentVariable("website_url"));
 //        addTestStepPassed("Amazon Site is Launched");
         System.out.println("beforeClass");
     }
