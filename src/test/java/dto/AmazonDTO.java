@@ -1,6 +1,10 @@
 package dto;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class AmazonDTO {
-    public static String email;
-    public static String password;
+    private String email;
+    private String password;
 }

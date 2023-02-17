@@ -15,12 +15,10 @@ public class BaseUiTest extends BaseTest{
         options.addArguments();
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        System.out.println("beforeChildClass");
     }
 
     @AfterClass(alwaysRun = true)
     public static void afterChildClass(){
         driver.quit();
-        System.out.println("afterChildClass");
     }
 }

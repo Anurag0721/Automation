@@ -1,6 +1,7 @@
 package tests.test;
 
 
+import dto.AmazonDTO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
@@ -9,6 +10,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import tests.basetest.BaseUiTest;
 import utils.ConfigUtils;
+import utils.TestDataFactory;
 
 import static reporter.TestReporter.addTestStepPassed;
 
@@ -22,27 +24,16 @@ public class Demo extends BaseUiTest {
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         driver.get(ConfigUtils.getEnvironmentVariable("website_url"));
-//        addTestStepPassed("Amazon Site is Launched");
-        System.out.println("beforeClass");
     }
 
     @Test(groups = {"test"}, enabled=true)
     public static void firstTest(){
+        AmazonDTO amazonDTO = (AmazonDTO) TestDataFactory.getTestData("amazon");
         homePage.clickOnHomePageSignIn();
-        loginPage.loginToApplication();
+        addTestStepPassed("Home Page Sign in got clicked");
+        loginPage.loginToApplication(amazonDTO);
+        addTestStepPassed("Credentials entered");
         homePage.validateUserLogin();
+        addTestStepPassed("User is Successfully Logged in");
     }
-
-    @Test(groups = {"test"}, enabled=false)
-    public static void secondTest() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
-        addTestStepPassed("Chrome Driver Launched");
-        driver.get("https://www.google.com");
-        addTestStepPassed("Google Site is Launched");
-        driver.manage().window().maximize();
-        Thread.sleep(3000);
-        driver.close();
-        addTestStepPassed("Chrome Driver Closed");
-    }
-
 }

@@ -33,12 +33,16 @@ public class TestDataFactory {
         }
     }
 
-    public static Object getTestData(String data) throws IOException {
-        switch (data){
-            case "credentials":
-                loadTestData();
-                return mapper.readValue(testdata.getJSONObject(data).toString(), AmazonDTO.class);
+    public static Object getTestData(String data)  {
+        try {
+            switch (data) {
+                case "amazon":
+                    return mapper.readValue(testdata.getJSONObject(data).toString(), AmazonDTO.class);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
         return null;
     }
 

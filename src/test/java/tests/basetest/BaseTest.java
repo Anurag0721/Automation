@@ -12,10 +12,13 @@ import java.io.IOException;
 
 public class BaseTest {
     @BeforeSuite(alwaysRun = true)
-    public static void beforeSuite() throws IOException {
-        ConfigUtils.loadTestProperties();
-        System.out.println("Test properties Loaded");
-        TestDataFactory.loadTestData();
-        System.out.println("Test data Loaded");
+    public static void beforeSuite()  {
+        try{
+            ConfigUtils.loadTestProperties();
+            TestDataFactory.loadTestData();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        };
     }
 }

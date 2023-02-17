@@ -1,5 +1,7 @@
 package pages;
 
+import dto.AmazonDTO;
+import io.netty.handler.codec.base64.Base64Decoder;
 import locators.LoginPageLocators;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,12 +24,12 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void loginToApplication(){
+    public void loginToApplication(AmazonDTO amazonDTO){
         wait.until(ExpectedConditions.visibilityOf(signInEmail));
-        signInEmail.sendKeys("anurag.vijay.chaudhari@gmail.com");
+        signInEmail.sendKeys(amazonDTO.getEmail());
         signInContinue.click();
         wait.until(ExpectedConditions.visibilityOf(signInPassword));
-        signInPassword.sendKeys("Andy@0721");
+        signInPassword.sendKeys(amazonDTO.getPassword());
         signInSubmit.click();
     }
 
