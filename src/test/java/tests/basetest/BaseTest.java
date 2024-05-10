@@ -19,12 +19,10 @@ public class BaseTest {
     @BeforeClass(alwaysRun = true)
     public static void beforeChildClass(){
         options = new ChromeOptions();
-        options.addArguments();
+        options.addArguments("--remote-allow-origins=*");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Nikita\\Anurag_IJ\\Automation\\chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-//        CommonUtils cu = new CommonUtils(driver);
-//        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//        addTestStepPassed("Chrome Driver Launched in Maximize mode");
         System.out.println("beforeChildClass");
     }
 
