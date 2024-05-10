@@ -3,7 +3,7 @@
 <suite name="Suite">
     <groups>
         <run>
-            <include name="test1"/>
+            <include name="test"/>
         </run>
     </groups>
     <listeners>
@@ -12,7 +12,6 @@
     <test name="End_To_End_Testcases">
         <classes>
             <class name="tests.test.Demo"/>
-            <class name="tests.test.TestNG"/>
         </classes>
     </test>
 </suite>

@@ -17,7 +17,7 @@ public class BaseTest {
     private static ChromeOptions options;
 //    public static WebDriverWait wait;
     @BeforeClass(alwaysRun = true)
-    public static void beforeChildClass(){
+    public void beforeChildClass(){
         options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Nikita\\Anurag_IJ\\Automation\\chromedriver.exe");
@@ -27,7 +27,7 @@ public class BaseTest {
     }
 
     @AfterClass(alwaysRun = true)
-    public static void afterChildClass(){
+    public void afterChildClass(){
         driver.quit();
         System.out.println("afterChildClass");
     }
