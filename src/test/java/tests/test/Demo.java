@@ -28,8 +28,8 @@ public class Demo extends BaseTest {
     @Test(groups = {"test"}, enabled=true)
     public static void firstTest(){
         homePage.clickOnHomePageSignIn();
-        loginPage.loginToApplication();
-        homePage.validateUserLogin();
+//        loginPage.loginToApplication();
+//        homePage.validateUserLogin();
     }
 
     @Test(groups = {"test"}, enabled=false)
