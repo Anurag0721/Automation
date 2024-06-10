@@ -25,14 +25,14 @@ public class Demo extends BaseTest {
         System.out.println("beforeClass");
     }
 
-    @Test(groups = {"test"}, enabled=true)
+    @Test(groups = {"test"}, enabled=false)
     public static void firstTest(){
         homePage.clickOnHomePageSignIn();
 //        loginPage.loginToApplication();
 //        homePage.validateUserLogin();
     }
 
-    @Test(groups = {"test"}, enabled=false)
+    @Test(groups = {"test"}, enabled=true)
     public static void secondTest() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         addTestStepPassed("Chrome Driver Launched");
