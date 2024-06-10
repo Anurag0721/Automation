@@ -1,6 +1,7 @@
 package tests.test;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
@@ -10,7 +11,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import tests.basetest.BaseTest;
 import static reporter.TestReporter.addTestStepPassed;
-
+@Slf4j
 public class Demo extends BaseTest {
 
     static HomePage homePage;
@@ -36,12 +37,12 @@ public class Demo extends BaseTest {
     public static void secondTest() throws InterruptedException {
 //        WebDriver driver = new ChromeDriver();
         addTestStepPassed("Chrome Driver Launched");
+        log.info("Chrome Driver Launched");
         driver.get("https://www.google.com");
         addTestStepPassed("Google Site is Launched");
+        log.info("Google Site is Launched");
         driver.manage().window().maximize();
         Thread.sleep(3000);
-        driver.close();
-        addTestStepPassed("Chrome Driver Closed");
     }
 
 }
