@@ -20,7 +20,7 @@ public class BaseTest {
     public void beforeChildClass(){
         options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Nikita\\Anurag_IJ\\Automation\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\ANURAG\\Desktop\\Java_Automation_Code\\End_To_End_Testcases\\chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         System.out.println("beforeChildClass");
