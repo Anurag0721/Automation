@@ -34,7 +34,7 @@ public class Demo extends BaseTest {
 
     @Test(groups = {"test"}, enabled=true)
     public static void secondTest() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
+//        WebDriver driver = new ChromeDriver();
         addTestStepPassed("Chrome Driver Launched");
         driver.get("https://www.google.com");
         addTestStepPassed("Google Site is Launched");
