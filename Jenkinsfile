@@ -11,9 +11,9 @@ pipeline{
             bat "mvn test"
             }
         }
-        stage(" Testing Stage"){
+        stage("Package Stage"){
             steps{
-            bat "mvn test"
+            bat "mvn package"
             }
         }
     }
